@@ -32,18 +32,25 @@ function Header() {
                 <ClosedWraper>
                     <CustomClose onClick={()=> setBurgerStatus(false)}/>
                 </ClosedWraper>
-                
+                {cars && cars.map((car, index) => {
+                    <li key={index}><a href="#">{car}</a></li>
+                })}
+
+                {/* If not redux loaded */}
+
+                <li><a href="#">Model S</a></li>
+                <li><a href="#">Model 3</a></li>
+                <li><a href="#">Model Y</a></li>
+                <li><a href="#">Model X</a></li>
+
                 <li><a href="#">Exsisting Inventory</a></li>
                 <li><a href="#">Used Inventory</a></li>
                 <li><a href="#">Trade-in</a></li>
                 <li><a href="#">Cybertruck</a></li>
-                <li><a href="#">RoadMaster</a></li>
+                <li><a href="#">Roadmaster</a></li>
                 <li><a href="#">Powerwall</a></li>
                 <li><a href="#">Commercial Energy</a></li>
                 <li><a href="#">Utilities</a></li>
-                {cars && cars.map((car, index) => {
-                    <li key={index}><a href="#">li{car}</a></li>
-                })}
             </BurgerNav>
         </Container>
     )
